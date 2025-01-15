@@ -45,13 +45,37 @@ export default {
 </style> -->
 
 <template>
-  <p>this is homepage</p>
+  <div>
+    <p>This is the homepage</p>
+    <img src="./assets/salad.jpg" alt="">
+    <div>
+      <!-- <div v-for="x in recipes" :key="x.id">
+        Use the imported image paths in the src attribute 
+        <img :src="x.image" :alt="x.name" />
+        <p>{{ x.name }}</p>
+      </div> -->
+    </div>
+  </div>
 </template>
 
 <script>
- 
+export default {
+  data() {
+    return {
+      recipes: [],
+    };
+  },
+  created() {
+    // Dynamically import the images
+    this.recipes = [
+      { id: 1, name: 'Healthy Rich Salad', description: 'A healthy salad.', image: require('@/assets/salad.jpg') },
+      { id: 2, name: 'Chicken Curry', description: 'A spicy chicken dish.', image: require('@/assets/chicken-curry.jpg') },
+      { id: 3, name: 'Meow Meow', description: 'A cute cat.', image: require('@/assets/nav.jpg') },
+    ];
+  },
+};
 </script>
 
-<style>
-
+<style scoped>
+/* Add any styles you like here */
 </style>
