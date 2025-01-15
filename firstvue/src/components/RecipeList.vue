@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="recipe-list">
       <RecipeItem v-for="recipe in filteredRecipes" :key="recipe.id" :recipe="recipe" />
     </div>
@@ -33,4 +33,4 @@
         gap: 15px;
     }
 </style>
-  
+   -->

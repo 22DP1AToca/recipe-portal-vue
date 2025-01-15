@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="recipe-item">
       <img :src="recipe.image" alt="Recipe Image" />
       <h3>{{ recipe.name }}</h3>
@@ -32,4 +32,4 @@
         height: auto;
     }
 </style>
-  
+   -->

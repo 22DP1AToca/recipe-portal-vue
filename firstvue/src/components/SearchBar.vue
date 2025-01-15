@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="search-bar">
       <input
         type="text"
@@ -30,4 +30,4 @@
         font-size: 16px;
     }
 </style>
-  
+   -->
