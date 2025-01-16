@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import uhm from '../views/uhm.vue'
+import Uhm from '../views/Uhm.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,13 +10,14 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
-
     {
       path: '/uhm',
       name: 'uhm',
-      component: uhm,
+      component: Uhm,  
     },
   ],
 })
 
 export default router
+
+

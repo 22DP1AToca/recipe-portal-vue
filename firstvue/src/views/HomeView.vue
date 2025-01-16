@@ -68,9 +68,9 @@ export default {
   created() {
     // Dynamically import the images
     this.recipes = [
-      { id: 1, name: 'Healthy Rich Salad', description: 'A healthy salad.', image: require('@/assets/salad.jpg') },
-      { id: 2, name: 'Chicken Curry', description: 'A spicy chicken dish.', image: require('@/assets/chicken-curry.jpg') },
-      { id: 3, name: 'Meow Meow', description: 'A cute cat.', image: require('@/assets/nav.jpg') },
+      { id: 1, name: 'Healthy Rich Salad', description: 'A healthy salad.', image: 'src/assets/salad.jpg'},
+      { id: 2, name: 'Chicken Curry', description: 'A spicy chicken dish.', image: 'src/assets/chicken-curry.jpg'},
+      { id: 3, name: 'Meow Meow', description: 'A cute cat.', image: 'src/assets/nav.jpg'},
     ];
   },
 };
