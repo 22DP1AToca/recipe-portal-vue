@@ -47,6 +47,7 @@ export default {
 <template>
   <div>
     <p>This is the homepage</p>
+    <p class="t"></p>
     <img src="./assets/salad.jpg" alt="">
     <div>
       <!-- <div v-for="x in recipes" :key="x.id">
@@ -77,5 +78,7 @@ export default {
 </script>
 
 <style scoped>
-/* Add any styles you like here */
+  .t{
+    height: 1000px;
+  }
 </style>
