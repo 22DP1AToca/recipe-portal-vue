@@ -45,11 +45,10 @@ export default {
 </style> -->
 
 <template>
-  <div>
+  <div class="main">
     <p>This is the homepage</p>
-    <p class="t"></p>
-    <img src="./assets/salad.jpg" alt="">
     <div>
+      <RecipeItem/>
       <!-- <div v-for="x in recipes" :key="x.id">
         Use the imported image paths in the src attribute 
         <img :src="x.image" :alt="x.name" />
@@ -60,7 +59,12 @@ export default {
 </template>
 
 <script>
+import RecipeItem from '@/components/RecipeItem.vue';
+
 export default {
+  components:{
+    RecipeItem
+  },
   data() {
     return {
       recipes: [],
@@ -78,7 +82,7 @@ export default {
 </script>
 
 <style scoped>
-  .t{
-    height: 1000px;
+  .main{
+    padding-left: 50px;
   }
 </style>

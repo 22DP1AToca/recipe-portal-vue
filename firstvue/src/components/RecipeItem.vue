@@ -33,3 +33,36 @@
     }
 </style>
    -->
+
+<template>
+  <div class = "recipe-item">
+    <div class="temp-img"></div>
+    <h1>Chicken</h1>
+    <p></p>
+  </div>
+</template>
+
+<script>
+  export default{
+    
+  }
+</script>
+
+<style scoped>
+  .recipe-item{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+    height: 300px;
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .temp-img{
+    width: 100%;
+    height: 200px;
+    background-color: grey;
+  }
+</style>
