@@ -46,7 +46,6 @@ export default {
 
 <template>
   <div class="main">
-    <p>This is the homepage</p>
     <div>
       <RecipeItem/>
       <!-- <div v-for="x in recipes" :key="x.id">
