@@ -28,8 +28,6 @@
     height: 100%;
   }
 
- 
-
   #app {
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
@@ -41,14 +39,12 @@
 
   header {
     padding-left: 50px;
-    background: #fff;
   }
 
   .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
     color: rgb(0, 0, 0);
     padding: 10px 0 10px 0;
     height: 40px;

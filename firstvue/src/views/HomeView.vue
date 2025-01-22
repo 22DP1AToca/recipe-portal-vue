@@ -45,8 +45,8 @@ export default {
 </style> -->
 
 <template>
-  <div class="main">
-    <div>
+   <main>
+    <div class="recipe-container">
       <RecipeItem/>
       <!-- <div v-for="x in recipes" :key="x.id">
         Use the imported image paths in the src attribute 
@@ -54,7 +54,7 @@ export default {
         <p>{{ x.name }}</p>
       </div> -->
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style scoped>
-  .main{
-    padding-left: 50px;
+  main{
+    padding: 50px 0 0 50px;
   }
 </style>
