@@ -112,7 +112,4 @@
   font-size: 18px;
   color: #9B9B9B;
 }
-
-
-
 </style>
