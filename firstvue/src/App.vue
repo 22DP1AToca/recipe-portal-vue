@@ -28,8 +28,13 @@
     height: 100%;
   }
 
+ 
+
   #app {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     color: #2c3e50;
     min-height: 100%;
   }
