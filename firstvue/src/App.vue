@@ -38,7 +38,12 @@
   }
 
   header {
-    padding-left: 50px;
+    padding: 10px 0 0 50px;
+    box-shadow: 0 1px 5px #bdbdbd;
+  }
+
+  header h1{
+    font-size: 28px;
   }
 
   .navbar {
