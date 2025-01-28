@@ -2,25 +2,25 @@
   <div class="recipe-item">
     <div class="temp-img"></div>
     <div class="content">
-      <h1>{{name}}</h1>
+      <h1>{{ name }}</h1>
       <div class="recipe-details">
-          <span class="material-icons">schedule</span>
-          <p class="detail-text">{{minutes}} minutes</p>
- 
-          <div class="rating">
-            <span class="material-symbols-outlined">star</span>
-            <span class="material-symbols-outlined">star</span>
-            <span class="material-symbols-outlined">star</span>
-            <span class="material-symbols-outlined">star</span>
-            <span class="material-symbols-outlined">star</span>
-          </div>
+        <span class="material-icons">schedule</span>
+        <p class="detail-text">{{ minutes }} minutes</p>
+
+        <div class="rating">
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined">star</span>
+        </div>
       </div>
     </div>
-    <p class="ingredient-text">1 missing ingredient...</p>
+    <p class="ingredient-text">{{ ingredientsMissing }} missing ingredient{{ ingredientsMissing !== 1 ? 's' : '' }}...</p>
     <div class="relbar-container">
       <div class="relbar">
-        <div 
-          class="relbar-fill" 
+        <div
+          class="relbar-fill"
           :style="{
             width: relbarPercentage + '%',
             backgroundColor: getColor(relbarPercentage)
@@ -32,49 +32,63 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        relbarPercentage: 0, // Change this value to adjust the percentage
-        userHasIngredients: 4
-      };
+export default {
+  data() {
+    return {
+      relbarPercentage: 0, // Initial bar percentage
+      ingredientsMissing: 0, // Initial number of missing ingredients
+      userHasIngredients: 4, // Example number of ingredients user has
+    };
+  },
+  watch: {
+    // Watch for changes in the user's ingredient count and recalculate the bar and missing ingredients
+    userHasIngredients(newAmount) {
+      this.calculateBarPercentage(newAmount);
+      this.updateMissingIngredients(newAmount);
     },
-    watch: {
-       // Watch for changes in the amount of ingredients user has
-      userHas(newAmount) {
-        this.calculateBarPercentage(newAmount);
-      },
-    },
-    props: {
-      id: Number,
-      name: String,
-      minutes: Number,
-      ingredients: Number,
-      img: String
-    },
+  },
+  props: {
+    id: Number,
+    name: String,
+    minutes: Number,
+    ingredients: Number, // Total ingredients needed for the recipe
+    img: String,
+  },
+  methods: {
+    // Calculate the progress bar percentage
+    calculateBarPercentage(userHas) {
+      if (this.ingredients === 0) {
+        return;
+      }
 
-    methods: {
-      calculateBarPercentage(userHas) {
-      if (this.ingredientAmountNeeded === 0) return;
-      
-      // Calculate the percentage of ingredients the user has
-      this.barPercentage = (userHas / this.ingredientAmountNeeded) * 100;
-      // Ensure it doesn't go above 100% (in case user has more ingredients than needed)
-      if (this.barPercentage > 100) {
-        this.barPercentage = 100;
+      this.relbarPercentage = (userHas / this.ingredients) * 100;
+
+      // Ensure percentage doesn't exceed 100%
+      if (this.relbarPercentage > 100) {
+        this.relbarPercentage = 100;
       }
-      },
-      getColor(percentage) {
-        if (percentage < 30) {
-          return '#e76f51'; // Red
-        } else if (percentage < 70) {
-          return '#f4a261'; // Orange
-        } else{
-          return '#4caf50'; // Green
-        }
+    },
+    // Update the number of missing ingredients
+    updateMissingIngredients(userHas) {
+      this.ingredientsMissing = Math.max(0, this.ingredients - userHas);
+    },
+    // Dynamically get color based on the percentage
+    getColor(percentage) {
+      if (percentage < 30) {
+        return '#e76f51'; // Red
+      } else if (percentage < 70) {
+        return '#f4a261'; // Orange
+      } else {
+        return '#4caf50'; // Green
       }
-    }
-  };
+    },
+  },
+  mounted() {
+    // Initial calculation when the component is mounted
+    this.calculateBarPercentage(this.userHasIngredients);
+    this.updateMissingIngredients(this.userHasIngredients);
+  },
+};
 </script>
 
 <style scoped>
@@ -117,10 +131,6 @@
     font-weight: 500;
   }
 
-  .time-content .material-icons {
-    font-size: 18px;
-  }
-
   .ingredient-text {
     margin-bottom: 0;
     font-size: 12px;
@@ -142,7 +152,7 @@
   .relbar-fill {
     height: 100%;
     border-radius: 5px;
-    transition: background-color 0.3s ease; /* Smooth transition for color change */
+    transition: background-color 0.3s ease;
   }
 
   .material-symbols-outlined {
