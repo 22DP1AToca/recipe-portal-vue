@@ -76,8 +76,4 @@
   .navbar-link:hover {
     color: #b3b3b3;
   }
-
-  main {
-    padding: 20px;
-  }
 </style>
