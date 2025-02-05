@@ -1,33 +1,48 @@
-<!-- <template>
+<!-- SearchBar.vue -->
+<template>
     <div class="search-bar">
       <input
         type="text"
         v-model="query"
-        placeholder="Search for a recipe..."
+        :placeholder="placeholder"
         @input="onSearch"
       />
     </div>
-</template>
+  </template>
   
-<script>
-    export default{
-        data() {
-            return {
-                query: '',
-            }
-        },
+  <script>
+  export default {
+    props: {
+      placeholder: {
+        type: String,
+        default: 'Search recipes...',
+      },
+    },
+    data() {
+      return {
+        query: '',
+      };
+    },
     methods: {
-        onSearch() {
-            this.$emit('search', this.query);
-        },}
-    }
-</script>
+      onSearch() {
+        this.$emit('search', this.query);
+      },
+    },
+  };
+  </script>
   
-<style scoped>
-    .search-bar input {
-        padding: 10px;
-        width: 300px;
-        font-size: 16px;
-    }
-</style>
-   -->
+  <style scoped>
+  .search-bar {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  </style>
+  

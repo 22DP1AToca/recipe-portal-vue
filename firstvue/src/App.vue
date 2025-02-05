@@ -1,16 +1,5 @@
 <template>
   <div id="app">
-    <div>
-      <header>
-        <h1>Recipe Portal</h1>
-        <nav class="navbar">
-          <ul class="nav-list">
-              <li><router-link to="/" class="navbar-link">Home</router-link></li>
-              <li><router-link to="/uhm" class="navbar-link">Uhm</router-link></li>
-          </ul>
-        </nav>
-      </header>
-    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -23,11 +12,13 @@
 
 <style>
   body, html {
+    font-family: "Montserrat", serif;
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: rgb(250, 250, 250);
   }
-
+/*
   #app {
     font-family: "Montserrat", serif;
     font-optical-sizing: auto;
@@ -75,5 +66,5 @@
 
   .navbar-link:hover {
     color: #b3b3b3;
-  }
+  } */
 </style>
