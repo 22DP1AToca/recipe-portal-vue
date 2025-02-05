@@ -34,11 +34,10 @@
   <style scoped>
   .search-bar {
     text-align: center;
-    margin-bottom: 20px;
   }
   
   .search-bar input {
-    width: 50%;
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;

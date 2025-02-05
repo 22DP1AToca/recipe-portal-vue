@@ -4,6 +4,7 @@
       <div class="logo">
         <a href="/">RecipeFridge</a>
       </div>
+      <SearchBar @search="handleSearch" />
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/uhm">About</a></li>
@@ -14,6 +15,21 @@
     </div>
   </nav>
 </template>
+
+<script>
+import SearchBar from './SearchBar.vue';
+
+export default {
+  components: {
+    SearchBar,
+  },
+  methods: {
+    handleSearch(query) {
+      this.$emit('search', query);
+    },
+  },
+};
+</script>
 
 <style scoped>
     *{
@@ -30,6 +46,7 @@
     left: 0;
     width: 100%;
     padding: 20px;
+    background-color: rgb(250, 250, 250);
     transition: all 0.4s ease;
     }
     nav.sticky{

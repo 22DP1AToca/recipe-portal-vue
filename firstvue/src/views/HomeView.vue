@@ -1,13 +1,13 @@
 <!-- HomeView.vue -->
 <template>
-  <Navbar />
+  <Navbar @search="handleSearch" />
   <br />
   <br />
   <br />
   <br />
   <main>
     <!-- Search Bar -->
-    <SearchBar @search="handleSearch" />
+    <!-- <SearchBar @search="handleSearch" /> -->
 
     <!-- Recipe List -->
     <RecipeList :recipes="filteredRecipes" :searchQuery="searchQuery" />
